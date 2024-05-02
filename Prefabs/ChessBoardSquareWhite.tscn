@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr0fx3bp8m72v"]
+
+[ext_resource type="Script" path="res://Scripts/ChessBoardSquare.cs" id="1_o2g02"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tskp4"]
+size = Vector3(9.43266, 1, 9.85443)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2t13"]
+resource_local_to_scene = true
+albedo_color = Color(0.984314, 0.74902, 0.784314, 1)
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+
+[node name="ChessBoardSquareWhite" type="Area3D"]
+script = ExtResource("1_o2g02")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.131462, -0.089983, 0.0509371)
+shape = SubResource("BoxShape3D_tskp4")
+
+[node name="ColorSquare" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.8147e-06, 0)
+material_override = SubResource("StandardMaterial3D_y2t13")
+size = Vector3(10, 1, 10)
+
+[connection signal="mouse_entered" from="." to="." method="OnMouseHover"]

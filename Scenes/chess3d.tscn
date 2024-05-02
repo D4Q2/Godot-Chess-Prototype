@@ -1,0 +1,238 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2j1rcnrc3uxa"]
+
+[ext_resource type="Script" path="res://Scripts/BoardManager.cs" id="1_2faoa"]
+[ext_resource type="PackedScene" uid="uid://cr0fx3bp8m72v" path="res://Prefabs/ChessBoardSquareWhite.tscn" id="2_fcxk1"]
+[ext_resource type="PackedScene" uid="uid://cuumn6epnqhb1" path="res://Prefabs/ChessBoardSquareBlack.tscn" id="3_0ajfk"]
+
+[sub_resource type="Sky" id="Sky_bbvgj"]
+
+[sub_resource type="Environment" id="Environment_pg67b"]
+background_mode = 1
+background_color = Color(0.545098, 0.694118, 1, 1)
+sky = SubResource("Sky_bbvgj")
+ambient_light_color = Color(0.196078, 0.6, 0.556863, 1)
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_density = 0.025
+
+[node name="MainScene" type="Node3D"]
+
+[node name="Board" type="Node3D" parent="." node_paths=PackedStringArray("piecesHolder", "whiteCamera", "blackCamera")]
+script = ExtResource("1_2faoa")
+piecesHolder = NodePath("Pieces")
+whiteCamera = NodePath("../WhiteCameraRotator/WhiteCamera")
+blackCamera = NodePath("../BlackCameraRotator/BlackCamera")
+
+[node name="h1" parent="Board" instance=ExtResource("2_fcxk1")]
+
+[node name="g1" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="f1" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+
+[node name="e1" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
+
+[node name="d1" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+
+[node name="c1" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)
+
+[node name="b1" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 0)
+
+[node name="a1" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 0)
+
+[node name="a2" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -10)
+
+[node name="h2" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="g2" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+
+[node name="f2" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -10)
+
+[node name="e2" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -10)
+
+[node name="d2" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -10)
+
+[node name="c2" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -10)
+
+[node name="b2" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -10)
+
+[node name="h3" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="g3" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20)
+
+[node name="f3" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
+
+[node name="e3" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -20)
+
+[node name="d3" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -20)
+
+[node name="c3" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -20)
+
+[node name="b3" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -20)
+
+[node name="a3" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -20)
+
+[node name="a4" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -30)
+
+[node name="h4" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+
+[node name="g4" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -30)
+
+[node name="f4" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -30)
+
+[node name="e4" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
+
+[node name="d4" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -30)
+
+[node name="c4" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -30)
+
+[node name="b4" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -30)
+
+[node name="h5" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
+
+[node name="g5" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -40)
+
+[node name="f5" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -40)
+
+[node name="e5" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -40)
+
+[node name="d5" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -40)
+
+[node name="c5" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -40)
+
+[node name="b5" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -40)
+
+[node name="a5" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -40)
+
+[node name="a6" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -50)
+
+[node name="h6" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
+
+[node name="g6" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -50)
+
+[node name="f6" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -50)
+
+[node name="e6" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -50)
+
+[node name="d6" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -50)
+
+[node name="c6" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -50)
+
+[node name="b6" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -50)
+
+[node name="h7" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60)
+
+[node name="g7" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -60)
+
+[node name="f7" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -60)
+
+[node name="e7" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -60)
+
+[node name="d7" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -60)
+
+[node name="c7" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -60)
+
+[node name="b7" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -60)
+
+[node name="a7" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -60)
+
+[node name="a8" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -70)
+
+[node name="h8" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -70)
+
+[node name="g8" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -70)
+
+[node name="f8" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -70)
+
+[node name="e8" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -70)
+
+[node name="d8" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -70)
+
+[node name="c8" parent="Board" instance=ExtResource("2_fcxk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -70)
+
+[node name="b8" parent="Board" instance=ExtResource("3_0ajfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -70)
+
+[node name="Pieces" type="Node3D" parent="Board"]
+
+[node name="WhiteCameraRotator" type="Node3D" parent="."]
+transform = Transform3D(1, -5.48842e-16, 2.8571e-16, 2.85709e-16, 0.819152, 0.573576, -5.48843e-16, -0.573576, 0.819152, -35, 0.5, -35)
+
+[node name="WhiteCamera" type="Camera3D" parent="WhiteCameraRotator"]
+transform = Transform3D(1, 1.56902e-23, 1.30819e-23, 1.56902e-23, 1, 1.33775e-09, 1.30819e-23, 1.33775e-09, 1, 0, -0.256599, 77.9499)
+
+[node name="BlackCameraRotator" type="Node3D" parent="."]
+transform = Transform3D(-1, -5.01436e-08, 7.16126e-08, 2.85709e-16, 0.819152, 0.573576, -8.74228e-08, 0.573576, -0.819152, -35, 0.5, -35)
+
+[node name="BlackCamera" type="Camera3D" parent="BlackCameraRotator"]
+transform = Transform3D(1, 1.56902e-23, 1.30819e-23, 1.56902e-23, 1, 1.33775e-09, 1.30819e-23, 1.33775e-09, 1, 0, -0.256599, 77.9499)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.601162, 0.752911, -0.267822, -0.794139, 0.600248, -0.0951126, 0.0891482, 0.269866, 0.958762, 0, 27.2396, 27.1628)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pg67b")

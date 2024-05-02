@@ -1,0 +1,25 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Chess"
+run/main_scene="res://Scenes/chess3d.tscn"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+boot_splash/image="res://Images/SaberCPPLogo.png"
+config/icon="res://Images/icon.png"
+
+[dotnet]
+
+project/assembly_name="Chess"
+
+[filesystem]
+
+import/fbx/enabled=false
